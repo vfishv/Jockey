@@ -6,7 +6,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.crashlytics.android.Crashlytics;
+//import com.crashlytics.android.Crashlytics;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import timber.log.Timber;
@@ -48,6 +48,6 @@ public abstract class BaseFragment extends RxFragment {
     @Override
     public void onResume() {
         super.onResume();
-        Crashlytics.setString("last_foreground_fragment", getClass().getName());
+        //Crashlytics.setString("last_foreground_fragment", getClass().getName());
     }
 }

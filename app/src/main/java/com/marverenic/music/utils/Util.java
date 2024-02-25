@@ -28,6 +28,7 @@ import com.marverenic.music.R;
 import com.marverenic.music.model.Song;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -158,7 +159,11 @@ public final class Util {
         } catch (OutOfMemoryError e) {
             Timber.e(e, "Unable to allocate space on the heap for full song artwork");
         } finally {
-            retriever.release();
+            try {
+                retriever.release();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         return null;

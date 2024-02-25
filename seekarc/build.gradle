@@ -4,6 +4,7 @@ def config = rootProject.extensions.getByName("ext")
 
 android {
     compileSdkVersion config.compileSdkVersion
+    namespace "com.triggertrap.seekarc"
 
     defaultConfig {
         minSdkVersion 14

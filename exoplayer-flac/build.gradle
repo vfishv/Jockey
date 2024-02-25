@@ -17,6 +17,7 @@ def config = rootProject.extensions.getByName("ext")
 
 android {
     compileSdkVersion config.compileSdkVersion
+    namespace "com.google.android.exoplayer2.ext.flac"
 
     defaultConfig {
         minSdkVersion 16

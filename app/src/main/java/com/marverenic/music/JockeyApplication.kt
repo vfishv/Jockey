@@ -4,13 +4,13 @@ import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.crashlytics.android.Crashlytics
+//import com.crashlytics.android.Crashlytics
 import com.marverenic.music.data.inject.JockeyComponentFactory
 import com.marverenic.music.data.inject.JockeyGraph
 import com.marverenic.music.utils.CrashlyticsTree
 import com.marverenic.music.utils.compat.JockeyPreferencesCompat
 import com.marverenic.music.utils.compat.PlayerQueueMigration
-import io.fabric.sdk.android.Fabric
+//import io.fabric.sdk.android.Fabric
 import timber.log.Timber
 
 class JockeyApplication : Application() {
@@ -22,7 +22,7 @@ class JockeyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Fabric.with(this, Crashlytics())
+//        Fabric.with(this, Crashlytics())
         setupTimber()
 
         JockeyPreferencesCompat.upgradeSharedPreferences(this)

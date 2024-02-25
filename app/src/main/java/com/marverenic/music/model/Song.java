@@ -16,6 +16,7 @@ import com.marverenic.music.data.store.PlayCountStore;
 import com.marverenic.music.utils.UriUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -205,7 +206,11 @@ public class Song implements Parcelable, Comparable<Song> {
         year = stringToInt(mmr.extractMetadata(METADATA_KEY_DATE), year);
         trackNumber = stringToInt(mmr.extractMetadata(METADATA_KEY_CD_TRACK_NUMBER), trackNumber);
 
-        mmr.release();
+        try {
+            mmr.release();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public String getSongName() {
